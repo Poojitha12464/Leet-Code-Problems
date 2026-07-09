@@ -1,0 +1,17 @@
+Problem: Remove Duplicates from sorted array
+Difficulty: Easy
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int n=nums.length;
+        int a=0;
+        for(int i=0;i<n;i++)
+        {
+            if(nums[a]!=nums[i])
+            {
+                nums[++a]=nums[i];
+            }
+        }
+        return ++a;
+    }
+}
