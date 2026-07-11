@@ -1,0 +1,17 @@
+Problem: Best time to buy and sell a stock
+Difficulty: Easy
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int n=prices.length;
+        int buying=prices[0];
+        int selling=0;
+        for(int i=1;i<n;i++)
+        {
+            if(prices[i]<buying) buying=prices[i];
+            else if(prices[i]-buying>selling) selling=prices[i]-buying;
+        }
+        
+        return selling;
+    }
+}
